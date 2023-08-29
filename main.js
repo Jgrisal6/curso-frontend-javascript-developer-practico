@@ -3,41 +3,41 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const menuHamburger = document.querySelector('.menu-hamburger');
 const menuCarrito = document.querySelector('.navbar-shopping-cart');
 const mobileMenu = document.querySelector('.mobile-menu');
-const aside = document.querySelector('.product-detail');
+const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 menuHamburger.addEventListener('click', toggleMobileMenu);
-menuCarrito.addEventListener('click', toggleCarritoAside);
+menuCarrito.addEventListener('click', toggleCarritoshoppingCartContainer);
 
 function toggleDesktopMenu() {
-    const isAsideClosed = aside.classList.contains('inactive');
+    const isshoppingCartContainerClosed = shoppingCartContainer.classList.contains('inactive');
 
-    if(!isAsideClosed) {
-        aside.classList.add('inactive');
+    if(!isshoppingCartContainerClosed) {
+        shoppingCartContainer.classList.add('inactive');
     }
 
     desktopMenu.classList.toggle('inactive');
 }
 
 function toggleMobileMenu() {
-    const isAsideClosed = aside.classList.contains('inactive');
+    const isshoppingCartContainerClosed = shoppingCartContainer.classList.contains('inactive');
 
-    if(!isAsideClosed){
-        aside.classList.add('inactive');
+    if(!isshoppingCartContainerClosed){
+        shoppingCartContainer.classList.add('inactive');
     }
 
     mobileMenu.classList.toggle('inactive');
 }
 
-function toggleCarritoAside() {
+function toggleCarritoshoppingCartContainer() {
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
     
     if(!isMobileMenuClosed) {
         mobileMenu.classList.add('inactive');
     }
 
-    aside.classList.toggle('inactive');
+    shoppingCartContainer.classList.toggle('inactive');
 }
 
 const productList = [];
@@ -69,10 +69,10 @@ function renderProducts(arr) {
 
         const productInfoFigure = document.createElement('figure');
 
-        const productImgCard = document.createElement('img');
-        productImgCard.setAttribute('src', './icons/bt_add_to_cart.svg');
+        const productImgCart = document.createElement('img');
+        productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
 
-        productInfoFigure.appendChild(productImgCard);
+        productInfoFigure.appendChild(productImgCart);
 
         productInfo.append(productInfoDiv, productInfoFigure);
         productCard.append(productImg, productInfo);
